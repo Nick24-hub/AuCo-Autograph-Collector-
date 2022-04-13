@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial scale=1.0">
     <title>AuCo (Autograph Collector)</title>
-    <!-- <link rel="stylesheet" href="test.css"> -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="product_page.css">
     <link rel="stylesheet" href="footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+
     <div class="header">
         <div class="container">
             <div class="navbar">
                 <div class="logo">
                     <a href="index.html">
-                        <img alt="" src="images/autograf-logo.png" width="150" height="150">
+                        <img alt="" src="images/autograf-logo.png" width="150px" height="150px">
                     </a>
                 </div>
                 <nav>
@@ -30,62 +30,84 @@
                         <li><a href="account.html">Account</a></li>
                     </ul>
                 </nav>
-                <img alt="" src="images/menu-icon.png" class="menu-icon" onclick="menutoggle()">
+                <img src="images\menu-icon.png" class="menu-icon" onclick="menutoggle()">
             </div>
-            <div class="row">
-                <div class="col2">
-                    <h1>
-                        Inspire yourself!
-                    </h1>
-                    <p>Anything you love more, fear more, serve more, or value more than God is your idol.</p>
-                    <p>Here you can find your idol autograph.</p>
-                    <a href="gallery.html" class="btn">Explore Now &#8594;</a>
+        </div>
+    </div>
+    <!-- single product details -->
+
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col2">
+                <img src="images\product1.jpg" width="100%" id="ProductImg">
+
+                <div class="small-img-row">
+                    <div class="small-img-col">
+                        <img src="images\product1.jpg" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images\product1_small1.jpg" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images\product1_small2.jpg" width="100%" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="images\product1_small3.jpg" width="100%" class="small-img">
+                    </div>
                 </div>
-                <div class="col2">
-                    <img alt="" src="images/background.png">
-                </div>
+            </div>
+            <div class="col2">
+                <p>Pop stars</p>
+                <h1>
+                    MICHAEL JACKSON AUTOGRAPHED THRILLER ALBUM - PSA DNA AND PHOTO PROOF
+                </h1>
+                <h4>$12.499,99</h4>
+                <a class="btn">Buy</a>
+                <h3>Product Details</h3>
+                <br>
+                <p> Once in a lifetime an item is as impressive as this one. Here is your once in a lifetime. This is an
+                    original full album in amazing condition autographed by Michael Jackson!!!!! WOW!!!! Where can you
+                    find a real autographed Thriller album like this? This has been in my personal collection for many
+                    years and now its time to sell it. I also have a photo of Michael holding the album right before he
+                    signed it. I will email that to the buyer. I will not be posting the full photo online. But you can
+                    get a little taste of it. Buyer will receive photo without the red cover. Thank you for looking.
+                </p>
             </div>
         </div>
     </div>
 
-    <!-- featured categories -->
-    <div class="categories">
-        <div class="small-container">
-            <div class="row">
-                <div class="col3">
-                    <img alt="" src="images/category1.png">
-                </div>
-                <div class="col3">
-                    <img alt="" src="images/category2.png">
-                </div>
-                <div class="col3">
-                    <img alt="" src="images/category3.png">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- featured autographs -->
+    <!----  title  ---->
     <div class="small-container">
-        <h2 class="title">Featured Autographs</h2>
+        <div class="row row-2">
+            <h2>Related Products</h2>
+            <a href="gallery.html">
+                <p>View More</p>
+            </a>
+        </div>
+    </div>
+
+
+    <!---- products ---->
+
+    <div class="small-container">
         <div class="row">
             <div class="col4">
-                <a href="product-details-1.html">
-                    <img alt="" src="images/product1.jpg">
-                </a>
-                <h4>MICHAEL JACKSON AUTOGRAPHED THRILLER ALBUM - PSA DNA AND PHOTO PROOF</h4>
+                <a href="product-details-5.html">
+                    <img src="images\product5.jpg"></a>
+                <h4>Justin Bieber authentic autograph vinyl from Believe Tour meet and greet
+                </h4>
                 <div class="rating">
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
                 </div>
-                <p>$12.499,99</p>
+                <p>$175,00</p>
             </div>
             <div class="col4">
                 <a href="product-details-2.html">
-                    <img alt="" src="images/product2.jpg"></a>
+                    <img src="images\product2.jpg"></a>
                 <h4>Harry Potter and the Philosophers Stone. TRUE UK 1st Edition 1st Printing and signed by the auther
                 </h4>
                 <div class="rating">
@@ -95,11 +117,11 @@
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                 </div>
-                <p>$57.364,48</p>
+                <p>$56,916.76</p>
             </div>
             <div class="col4">
                 <a href="product-details-3.html">
-                    <img alt="" src="images/product3.jpg"></a>
+                    <img src="images\product3.jpg"></a>
                 <h4>EMINEM RELAPSE CD SIGNED AUTOGRAPHED RARE GOLD SHARPIE</h4>
                 <div class="rating">
                     <span class="fa fa-star checked"></span>
@@ -108,11 +130,11 @@
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                 </div>
-                <p>$375.00</p>
+                <p>$300,00</p>
             </div>
             <div class="col4">
                 <a href="product-details-4.html">
-                    <img alt="" src="images/product4.jpg"></a>
+                    <img src="images\product4.jpg"></a>
                 <h4>LIL PUMP HAND SIGNED AUTOGRAPHED 8X10 HIP HOP RAP MUSIC PHOTO WITH JSA COA RARE</h4>
                 <div class="rating">
                     <span class="fa fa-star checked"></span>
@@ -121,44 +143,9 @@
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star"></span>
                 </div>
-                <p>$199.99</p>
+                <p>$199,99</p>
             </div>
-        </div>
 
-    </div>
-
-    <!-- offer -->
-    <div class="offer">
-        <div class="small-container">
-            <div class="row">
-                <div class="col2">
-                    <img alt="" src="images/offer1.png" class="offer-img">
-                </div>
-                <div class="col2">
-                    <p>Exclusively Available on AuCo (Autograph Collector)</p>
-                    <h1>Leonardo DiCaprio Autograph Signature</h1>
-                    <small>The autograph of the great actor Leonardo DiCaprio written on blue ink paper on July 20, 2021
-                        at The thrd annual Saint-Tropez Gala by Leonardo DiCaprio Foundation </small>
-                    <a href="product-details-5.html" class="btn">Explore Now &#8594;</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- creators -->
-    <div class="creators">
-        <div class="small-container">
-            <h2 class="title">Page creators</h2>
-            <div class="row">
-                <div class="col2">
-                    <img alt="" src="images/creator1.jpg">
-                    <h3>Alexandrescu Nicolae</h3>
-                </div>
-                <div class="col2">
-                    <img alt="" src="images/creator2.jpg">
-                    <h3>Vacaru Stefan Robert</h3>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -184,7 +171,7 @@
                     <ul>
                         <li><a href="../csv/product.csv" download="product.csv">
                                 Download products as CSV file</a></li>
-                        <li><a href="statistics.php">View Statistics</a></li>
+                        <li><a href="statistics.html">View Statistics</a></li>
                         <li>Return Policy</li>
                         <li>Join Affiliate</li>
                     </ul>
@@ -204,9 +191,11 @@
         </div>
     </div>
 
+    <!-- js for product gallery -->
+    <script src="product_gallery.js"></script>
+
     <!-- js for toggle menu -->
     <script src="toggle_menu.js"></script>
-
 </body>
 
 </html>
