@@ -1,0 +1,118 @@
+/*-- gallery page --*/
+
+.row{
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* All products page */
+
+.all-products{
+    margin-top: 80px;
+}
+
+.row-2{
+    justify-content: space-between;
+    margin: 100px auto 50 px;
+}
+select{
+    border:1px solid #ff523b;
+    padding :5px;
+}
+select:focus{
+    outline:none;
+}
+.page-btn{
+    margin:0 auto 80px;
+}
+.page-btn span{
+    display: inline-block;
+    border:1px solid #ff523b;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.page-btn span:hover{
+    background: #ff523b;
+    color: #fff;
+}
+
+
+/*-- filter css */
+.form1 input{
+    width :30rem;
+    padding: 1rem;
+    border:none;
+    outline: none;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    border-bottom:2px solid lightblue;
+
+}
+.active {
+    background-color: rgb(0, 195, 255);
+}
+.btn-filter{
+    font-size: 1rem;
+    text-decoration: none;
+    color: #fff;
+    margin-right: 1rem;
+    background-color: rgb(255, 102, 0);
+    padding: 5px;
+    border-radius: 3px;
+}
+form input{
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+}
+
+form .btn{
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+form .btn:focus{
+    outline: none;
+}
+
+#LoginForm{
+    left: -300px;
+}
+
+#RegForm{
+    left: 0;
+}
+
+form a{
+    font-size: 12px;
+}
+
+#Indicator{
+    width: 100px;
+    border: none;
+    background: #ff523b;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(100px);
+    transition: transform 1s;
+}
+
+.btn-filter:hover, .btn-filter:active {
+    background-color: rgb(0, 195, 255);
+  
+}
+
+.current{
+    background-color: rgb(0, 195, 255);
+}
