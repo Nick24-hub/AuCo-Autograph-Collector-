@@ -42,7 +42,7 @@
     ?>
 
     <!-- js for toggle menu -->
-    <script src="../JS/toggle_menu.js"></script>
+    <script src="<?php echo URLROOT ?>/javascript/toggle_menu.js"></script>
 </body>
 
 </html>
