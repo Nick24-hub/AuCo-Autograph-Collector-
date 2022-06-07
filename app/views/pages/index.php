@@ -1,13 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial scale=1.0">
-    <title>AuCo (Autograph Collector)</title>
+    <title><?php echo SITENAME ?></title>
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/style.css">
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/home.css">
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -15,7 +18,7 @@
     <div class="header">
         <div class="container">
             <div class="navbar">
-            <?php
+                <?php
                 require APPROOT . '/views/includes/navigation.php';
                 ?>
             </div>
@@ -26,7 +29,7 @@
                     </h1>
                     <p>Anything you love more, fear more, serve more, or value more than God is your idol.</p>
                     <p>Here you can find your idol autograph.</p>
-                    <a href="gallery.html" class="btn">Explore Now &#8594;</a>
+                    <a href="gallery" class="btn">Explore Now &#8594;</a>
                 </div>
                 <div class="col2">
                     <img alt="" src="<?php echo URLROOT ?>/public/img/background.png">
@@ -151,47 +154,14 @@
 
     <!-- footer -->
 
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col1">
-                    <h3>Download Our App</h3>
-                    <p>Download App for Android and ios mobile phone.</p>
-                    <div class="app-logo">
-                        <img alt="" src="<?php echo URLROOT ?>/public/img/app-logo1.png">
-                        <img alt="" src="<?php echo URLROOT ?>/public/img/app-logo2.png">
-                    </div>
-                </div>
-                <div class="footer-col2">
-                    <img alt="" src="<?php echo URLROOT ?>/public/img/autograf-logo.png">
-                    <p>Our Purpose Is To Help You Maintain Your Autograph Collection Safe.</p>
-                </div>
-                <div class="footer-col3">
-                    <h3>Useful Links</h3>
-                    <ul>
-                        <li><a href="<?php echo URLROOT ?>/csv/product.csv" download="product.csv">
-                                Download products as CSV file</a></li>
-                        <li><a href="">View Statistics</a></li>
-                        <li>Return Policy</li>
-                        <li>Join Affiliate</li>
-                    </ul>
-                </div>
-                <div class="footer-col4">
-                    <h3>Follow us</h3>
-                    <ul>
-                        <li>Facebook</li>
-                        <li>Twitter</li>
-                        <li>Instagram</li>
-                        <li>YouTube</li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <p class="copyright">Copyright 2022 AuCo (Autograph Collector)</p>
-        </div>
-    </div>
+    <?php
+    require APPROOT . '/views/includes/footer.php';
+    ?>
+
 
     <!-- js for toggle menu -->
-    <script src="<?php echo URLROOT ?>/JS/toggle_menu.js"></script>
+    <script src="<?php echo URLROOT ?>/javascript/toggle_menu.js"></script>
 
 </body>
+
+</html>

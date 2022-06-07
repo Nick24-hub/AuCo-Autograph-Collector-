@@ -1,6 +1,15 @@
-<?php
-require APPROOT . '/views/includes/head.php';
-?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <title><?php echo SITENAME ?></title>
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/style.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/account.css">
+    <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
 
 <body>
     <div class="header">
@@ -19,7 +28,7 @@ require APPROOT . '/views/includes/head.php';
         <div class="container">
             <div class="row">
                 <div class="col2">
-                    <img alt="" src="../public/img/background.png">
+                    <img alt="" src="<?php echo URLROOT ?>/public/img/background.png">
                 </div>
                 <div class="col2">
                     <div class="form-container">
@@ -42,9 +51,9 @@ require APPROOT . '/views/includes/head.php';
                             <input type="password" name="password" placeholder="Password">
                             <input type="password" name="confirmPassword" placeholder="Confirm Password">
                             <button type="submit" name="register-submit" class="btn">Register</button>
-                            <a>
+                            <p>
                                 <?php echo $data['passwordError']; ?>
-                            <a>
+                            <p>
                         </form>
 
                     </div>
@@ -55,51 +64,15 @@ require APPROOT . '/views/includes/head.php';
 
     <!-- footer -->
 
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-col1">
-                    <h3>Download Our App</h3>
-                    <p>Download App for Android and ios mobile phone.</p>
-                    <div class="app-logo">
-                        <img alt="" src="../public/img/app-logo1.png">
-                        <img alt="" src="../public/img/app-logo2.png">
-                    </div>
-                </div>
-                <div class="footer-col2">
-                    <img alt="" src="../public/img/autograf-logo.png">
-                    <p>Our Purpose Is To Help You Maintain Your Autograph Collection Safe.</p>
-                </div>
-                <div class="footer-col3">
-                    <h3>Useful Links</h3>
-                    <ul>
-                        <li><a href="../csv/product.csv" download="product.csv">
-                                Download products as CSV file</a></li>
-                        <li><a href="">View Statistics</a></li>
-                        <li>Return Policy</li>
-                        <li>Join Affiliate</li>
-                    </ul>
-                </div>
-                <div class="footer-col4">
-                    <h3>Follow us</h3>
-                    <ul>
-                        <li>Facebook</li>
-                        <li>Twitter</li>
-                        <li>Instagram</li>
-                        <li>YouTube</li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <p class="copyright">Copyright 2022 AuCo (Autograph Collector)</p>
-        </div>
-    </div>
+    <?php
+    require APPROOT . '/views/includes/footer.php';
+    ?>
 
 
 
 
     <!-- js for toggle menu -->
-    <script src="../JS/toggle_menu.js"></script>
+    <script src="<?php echo URLROOT ?>/javascript/toggle_menu.js"></script>
 
     <!-- js for toggle form -->
     <script>
@@ -121,3 +94,5 @@ require APPROOT . '/views/includes/head.php';
     </script>
 
 </body>
+
+</html>

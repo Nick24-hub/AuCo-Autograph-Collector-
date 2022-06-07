@@ -6,8 +6,8 @@
 <nav>
     <ul id="MenuItems">
         <li><a href="<?php echo URLROOT; ?>/pages/index">Home</a></li>
-        <li><a href="<?php echo URLROOT; ?>/gallery">Gallery</a></li>
-        <li><a href="<?php echo URLROOT; ?>/contact">Contact</a></li>
+        <li><a href="<?php echo URLROOT; ?>/pages/gallery">Gallery</a></li>
+        <li><a href="<?php echo URLROOT; ?>/pages/contact">Contact</a></li>
         <li><?php if(isset($_SESSION['user_id'])):?>
             <a href='<?php echo URLROOT; ?>/users/logout'>Log Out</a></li>
             <?php else:?>

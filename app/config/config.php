@@ -12,4 +12,4 @@
     define('URLROOT', 'http://localhost/AuCo');
 
     //Sitename
-    define('SITENAME', 'Login & Register script');
+    define('SITENAME', 'AuCo (Autograph Collector)');

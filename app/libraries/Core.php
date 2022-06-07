@@ -3,7 +3,7 @@
    * App Core Class
    * Creates URL & loads core controller
    * URL FORMAT - /controller/method/params
-   */
+  */
 class Core
 {
   protected $currentController = 'Pages';
@@ -16,12 +16,12 @@ class Core
 
     $url = $this->getUrl();
 
-    // Look in BLL for first value
+    // Look in 'controllers' for first value, ucwords will capitalize first letter
 
     if ($url && file_exists('../app/controllers/' . ucwords($url[0]) . '.php')) {
       // If exists, set as controller
       $this->currentController = ucwords($url[0]);
-      // Unset 0 Index
+      // Delete first element of url 
       unset($url[0]);
     }
 
@@ -52,8 +52,11 @@ class Core
   public function getUrl()
   {
     if (isset($_GET['url'])) {
+      //Remove '/' from the end of the URL
       $url = rtrim($_GET['url'], '/');
+      //Remove all illegal URL characters
       $url = filter_var($url, FILTER_SANITIZE_URL);
+      //Return array of strings separated by '/'
       $url = explode('/', $url);
       return $url;
     }

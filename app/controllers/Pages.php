@@ -12,7 +12,11 @@ class Pages extends Controller {
         $this->view('index', $data);
     }
 
-    public function about() {
-        $this->view('about');
+    public function gallery(){
+        $this->view('gallery');
+    }
+
+    public function contact(){
+        $this->view('contact');
     }
 }
