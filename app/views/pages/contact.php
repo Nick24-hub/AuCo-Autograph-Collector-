@@ -17,9 +17,11 @@
     <!-- header -->
     <div class="header">
         <div class="container">
-            <?php
-            require APPROOT . '/views/includes/navigation.php';
-            ?>
+            <div class="navbar">
+                <?php
+                require APPROOT . '/views/includes/navigation.php';
+                ?>
+            </div>
         </div>
     </div>
     </div>
