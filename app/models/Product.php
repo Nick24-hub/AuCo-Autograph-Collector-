@@ -8,7 +8,7 @@ class Product
         $this->db = new Database;
     }
 
-    public function findAllPosts()
+    public function findAllProducts()
     {
         $this->db->query('SELECT * FROM products ORDER BY created_at ASC');
 
