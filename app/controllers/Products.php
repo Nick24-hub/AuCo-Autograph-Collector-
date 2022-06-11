@@ -6,35 +6,25 @@ class Products extends Controller
     {
         $this->productModel = $this->model('Product');
     }
-    
+
     public function gallery($data)
     {
-        if ($data=='all') {
+        if ($data == 'all') {
             $products = $this->productModel->findAllProducts();
             $data = ['products' => $products];
             $this->view('products/gallery', $data);
-        }
-        elseif ($data=='writer')
-        {
-            $products = $this->productModel->findWriter();
+        } else {
+            $products = $this->productModel->findProductByCategory($data);
             $data = ['products' => $products];
             $this->view('products/gallery', $data);
         }
-        elseif ($data=='popstar')
-        {
-            $products = $this->productModel->findPopStar();
-            $data = ['products' => $products];
-            $this->view('products/gallery', $data);
-        }elseif ($data=='rapstar')
-        {
-            $products = $this->productModel->findRapStar();
-            $data = ['products' => $products];
-            $this->view('products/gallery', $data);
-        }elseif ($data=='trapstar')
-        {
-            $products = $this->productModel->findTrapStar();
-            $data = ['products' => $products];
-            $this->view('products/gallery', $data);
-        }
+    }
+
+    public function product_details($id)
+    {
+        $product = $this->productModel->findProductById($id);
+        $products = $this->productModel->findProductByCategory($product->category);
+        $data = ['related_products' => $products, 'product' => $product];
+        $this->view('products/product_details', $data);
     }
 }

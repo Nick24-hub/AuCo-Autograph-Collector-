@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="<?php echo URLROOT ?>/public/css/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 
 <body>
+
     <div class="header">
         <div class="container">
             <div class="navbar">
@@ -30,10 +30,10 @@
             <h2>All Products</h2>
             <div class="filter-box">
                 <a class="current btn-filter" data-filter="all" href="<?php echo URLROOT; ?>/products/gallery/all">All</button>
-                <a class="btn-filter" data-filter="Pop Star" href="<?php echo URLROOT; ?>/products/gallery/popstar">Pop Star Autograph</a>
+                <a class="btn-filter" data-filter="Pop Star" href="<?php echo URLROOT; ?>/products/gallery/pop">Pop Star Autograph</a>
                 <a class="btn-filter" data-filter="Writer" href="<?php echo URLROOT; ?>/products/gallery/writer">Writer Autograph</a>
-                <a class="btn-filter" data-filter="Rap Star" href="<?php echo URLROOT; ?>/products/gallery/rapstar">Rap Star Autograph</a>
-                <a class="btn-filter" data-filter="Trap Star" href="<?php echo URLROOT; ?>/products/gallery/trapstar">Trap Star Autograph</a>
+                <a class="btn-filter" data-filter="Rap Star" href="<?php echo URLROOT; ?>/products/gallery/rap">Rap Star Autograph</a>
+                <a class="btn-filter" data-filter="Trap Star" href="<?php echo URLROOT; ?>/products/gallery/trap">Trap Star Autograph</a>
             </div>
         </div>
 

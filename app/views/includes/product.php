@@ -1,5 +1,5 @@
 <div class="col4">
-    <a href="<?php echo $product->id; ?>.php">
+    <a href="<?php echo URLROOT; ?>/products/product_details/<?php echo $product->id; ?>">
         <img alt="" src="<?php echo URLROOT; ?>/img/<?php echo $product->id; ?>_0.jpg">
     </a>
     <h4><?php echo $product->title; ?></h4>
