@@ -29,12 +29,11 @@
         <div class="row row-2">
             <h2>All Products</h2>
             <div class="filter-box">
-                <a href="Gallery.html" class="current btn-filter" data-filter="all">All</a>
-                <a class="btn-filter" data-filter="Singer">Singer Autograph</a>
-                <a class="btn-filter" data-filter="Writer">Writer Autograph</a>
-                <a class="btn-filter" data-filter="Painter">Painter Autograph</a>
-                <a class="btn-filter" data-filter="Random Celebrity">Random Celebrity Autograph</a>
-
+                <a class="current btn-filter" data-filter="all" href="<?php echo URLROOT; ?>/products/gallery/all">All</button>
+                <a class="btn-filter" data-filter="Pop Star" href="<?php echo URLROOT; ?>/products/gallery/popstar">Pop Star Autograph</a>
+                <a class="btn-filter" data-filter="Writer" href="<?php echo URLROOT; ?>/products/gallery/writer">Writer Autograph</a>
+                <a class="btn-filter" data-filter="Rap Star" href="<?php echo URLROOT; ?>/products/gallery/rapstar">Rap Star Autograph</a>
+                <a class="btn-filter" data-filter="Trap Star" href="<?php echo URLROOT; ?>/products/gallery/trapstar">Trap Star Autograph</a>
             </div>
         </div>
 
