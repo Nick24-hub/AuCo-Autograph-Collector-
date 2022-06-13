@@ -27,4 +27,17 @@ class Products extends Controller
         $data = ['related_products' => $products, 'product' => $product];
         $this->view('products/product_details', $data);
     }
+
+    public function inventory($user_id, $filter)
+    {
+        if ($filter == 'all') {
+            $products = $this->productModel->findMyProducts($user_id);
+            $data = ['products' => $products];
+            $this->view('products/inventory', $data);
+        } else {
+            $products = $this->productModel->findMyProductsById($user_id, $filter);
+            $data = ['products' => $products];
+            $this->view('products/inventory', $data);
+        }
+    }
 }

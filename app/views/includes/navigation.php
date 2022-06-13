@@ -8,12 +8,13 @@
         <li><a href="<?php echo URLROOT; ?>/pages/index">Home</a></li>
         <li><a href="<?php echo URLROOT; ?>/products/gallery/all">Gallery</a></li>
         <li><a href="<?php echo URLROOT; ?>/pages/contact">Contact</a></li>
-        <li><?php if (isset($_SESSION['user_id'])) : ?>
-                <a href='<?php echo URLROOT; ?>/users/logout'>Log Out</a>
-        </li>
-    <?php else : ?>
-        <a href='<?php echo URLROOT; ?>/users/login'>Log In</a></li>
-    <?php endif; ?>
+        <?php if (isset($_SESSION['user_id'])) : ?>
+            <li><a href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id'] ?>/all">My inventory</a></li>
+            <li><a href="<?php echo URLROOT; ?>/users/logout">Log Out</a></li>
+
+        <?php else : ?>
+            <a href="<?php echo URLROOT; ?>/users/login">Log In</a></li>
+        <?php endif; ?>
     </ul>
 </nav>
 <a href="cart">

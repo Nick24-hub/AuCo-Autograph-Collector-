@@ -8,6 +8,24 @@ class Product
         $this->db = new Database;
     }
 
+    public function findMyProductsById($user_id, $filter)
+    {
+        $this->db->query("SELECT * FROM products WHERE user_id = '$user_id' and category LIKE '%$filter%'");
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
+    public function findMyProducts($user_id)
+    {
+        $this->db->query("SELECT * FROM products WHERE user_id = '$user_id'");
+
+        $result = $this->db->resultSet();
+
+        return $result;
+    }
+
     public function findProductById($id)
     {
         $this->db->query("SELECT * FROM products WHERE id = '$id'");
