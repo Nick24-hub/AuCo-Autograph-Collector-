@@ -17,7 +17,7 @@
         <?php endif; ?>
     </ul>
 </nav>
-<a href="cart">
+<a href="<?php echo URLROOT;?>/carts/show">
     <img src="<?php echo URLROOT ?>/public/img/shopping-cart.png" width="30px" height="30px">
     <span>0</span>
 </a>

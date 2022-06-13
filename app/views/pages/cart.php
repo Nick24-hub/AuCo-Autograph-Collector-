@@ -33,44 +33,37 @@
                 <th>Product</th>
                 <th>Subtotal</th>
             </tr>
+            <?php
+            $total_price = 0;
+            foreach ($data as $product) { ?>
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <a href="product-details-1.php">
+                                <img src="<?php echo URLROOT; ?>/img/<?php echo $product->id; ?>_0.jpg">
+                            </a>
+                            <div>
+                                <p><?php echo $product->title ?></p>
+                                <small>Price: $<?php echo $product->price;
+                                                $total_price = $total_price + $product->price; ?>
+                                </small>
+                                <br>
+                                <form action="<?php echo URLROOT; ?>/carts/remove/<?php echo $product->id; ?>" method="POST">
+                                    <button style=background-color:orange type="submit">Remove</button>
+                                </form>
+                            </div>
 
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <a href="product-details-1.php">
-                            <img src="images\product1.jpg">
-                        </a>
-                        <div>
-                            <p>JORESTECH Hard Hat White</p>
-                            <small>Price: $26.99</small>
-                            <br>
-                            <a href="">Remove</a>
                         </div>
-                    </div>
-                </td>
-
-                <td>$26.99</td>
-            </tr>
+                    </td>
+                    <td>$<?php echo $product->price; ?></td>
+                </tr>
+            <?php } ?>
 
         </table>
 
         <div class="total-price">
 
         </div>
-        <?php
-        ini_set('error_reporting', 0);
-        ini_set('display_errors', 0);
-        $var = null;
-        if (isset($_SESSION["userUid"])) {
-            $var = $_SESSION["userUid"];
-        }
-        if ($var != null) {
-            echo "<div class='buy'></div>";
-        } else {
-            echo "<div class='buy1'></div>";
-        }
-        ?>
-
     </div>
 
     <!-- footer -->
@@ -82,7 +75,6 @@
 
     <!-- js for toggle menu -->
     <script src="<?php echo URLROOT ?>/javascript/toggle_menu.js"></script>
-
 </body>
 
 </html>
