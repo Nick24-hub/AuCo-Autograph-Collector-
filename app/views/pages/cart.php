@@ -31,7 +31,6 @@
         <table class="x">
             <tr>
                 <th>Product</th>
-                <th>Quantity</th>
                 <th>Subtotal</th>
             </tr>
 
@@ -49,7 +48,7 @@
                         </div>
                     </div>
                 </td>
-                <td><input type="number" value="1"></td>
+
                 <td>$26.99</td>
             </tr>
 

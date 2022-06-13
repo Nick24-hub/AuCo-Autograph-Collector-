@@ -53,7 +53,9 @@
                     <?php echo $main_product->title; ?>
                 </h1>
                 <h4>$<?php echo $main_product->price; ?></h4>
-                <a class="btn">Buy</a>
+                <form action="<?php echo URLROOT; ?>/carts/add/<?php echo $main_product->id; ?>" method="POST">
+                    <button type="submit" class="btn">Buy</button>
+                </form>
                 <h3>Product Details</h3>
                 <br>
                 <p> <?php echo $main_product->details; ?>
