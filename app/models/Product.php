@@ -8,7 +8,8 @@ class Product
         $this->db = new Database;
     }
 
-    public function findProductById($id){
+    public function findProductById($id)
+    {
         $this->db->query("SELECT * FROM products WHERE id = '$id'");
 
         $result = $this->db->single();
@@ -16,7 +17,8 @@ class Product
         return $result;
     }
 
-    public function findProductByCategory($category){
+    public function findProductByCategory($category)
+    {
         $this->db->query("SELECT * FROM products WHERE category LIKE '%$category%'");
 
         $results = $this->db->resultSet();
@@ -32,5 +34,4 @@ class Product
 
         return $results;
     }
-
 }

@@ -1,11 +1,14 @@
 <?php
-class User {
+class User
+{
     private $db;
-    public function __construct() {
+    public function __construct()
+    {
         $this->db = new Database;
     }
 
-    public function register($data) {
+    public function register($data)
+    {
         $this->db->query('INSERT INTO users (username, email, password) VALUES(:username, :email, :password)');
 
         //Bind values
@@ -21,7 +24,8 @@ class User {
         }
     }
 
-    public function login($username, $password) {
+    public function login($username, $password)
+    {
         $this->db->query('SELECT * FROM users WHERE username = :username');
 
         //Bind value
@@ -39,7 +43,8 @@ class User {
     }
 
     //Find user by email. Email is passed in by the Controller.
-    public function findUserByEmail($email) {
+    public function findUserByEmail($email)
+    {
         //Prepared statement
         $this->db->query('SELECT * FROM users WHERE email = :email');
 
@@ -47,7 +52,7 @@ class User {
         $this->db->bind(':email', $email);
 
         //Check if email is already registered
-        if($this->db->rowCount() > 0) {
+        if ($this->db->rowCount() > 0) {
             return true;
         } else {
             return false;

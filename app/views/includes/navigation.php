@@ -16,4 +16,8 @@
     <?php endif; ?>
     </ul>
 </nav>
+<a href="cart">
+    <img src="<?php echo URLROOT ?>/public/img/shopping-cart.png" width="30px" height="30px">
+    <span>0</span>
+</a>
 <img alt="" src="<?php echo URLROOT ?>/public/img/menu-icon.png" class="menu-icon" onclick="menutoggle()">

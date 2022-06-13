@@ -61,7 +61,7 @@
         <div class="row">
             <div class="col4">
                 <a href="product-details-1.html">
-                    <img alt="" src="<?php echo URLROOT ?>/public/img/product1.jpg">
+                    <img alt="" src="<?php echo URLROOT ?>/public/img/1_0.jpg">
                 </a>
                 <h4>MICHAEL JACKSON AUTOGRAPHED THRILLER ALBUM - PSA DNA AND PHOTO PROOF</h4>
                 <div class="rating">
@@ -75,7 +75,7 @@
             </div>
             <div class="col4">
                 <a href="product-details-2.html">
-                    <img alt="" src="<?php echo URLROOT ?>/public/img/product2.jpg"></a>
+                    <img alt="" src="<?php echo URLROOT ?>/public/img/2_0.jpg"></a>
                 <h4>Harry Potter and the Philosophers Stone. TRUE UK 1st Edition 1st Printing and signed by the auther
                 </h4>
                 <div class="rating">
@@ -89,7 +89,7 @@
             </div>
             <div class="col4">
                 <a href="product-details-3.html">
-                    <img alt="" src="<?php echo URLROOT ?>/public/img/product3.jpg"></a>
+                    <img alt="" src="<?php echo URLROOT ?>/public/img/3_0.jpg"></a>
                 <h4>EMINEM RELAPSE CD SIGNED AUTOGRAPHED RARE GOLD SHARPIE</h4>
                 <div class="rating">
                     <span class="fa fa-star checked"></span>
@@ -102,7 +102,7 @@
             </div>
             <div class="col4">
                 <a href="product-details-4.html">
-                    <img alt="" src="<?php echo URLROOT ?>/public/img/product4.jpg"></a>
+                    <img alt="" src="<?php echo URLROOT ?>/public/img/4_0.jpg"></a>
                 <h4>LIL PUMP HAND SIGNED AUTOGRAPHED 8X10 HIP HOP RAP MUSIC PHOTO WITH JSA COA RARE</h4>
                 <div class="rating">
                     <span class="fa fa-star checked"></span>
