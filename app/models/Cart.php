@@ -8,14 +8,48 @@ class Cart
     }
     public function add($data)
     {
-        $this->db->query("INSERT INTO in_cart (user_id,product_id) VALUES(:user_id,:product_id)");
-        $this->db->bind(':user_id', $_SESSION['user_id']);
-        $this->db->bind(':product_id', $data);
-         
-        if($this->db->execute()){
-            return true;
-        } else {
-            return false;
+        $user_id = $_SESSION['user_id'];
+        $this->db->query("SELECT * FROM in_cart WHERE user_id = '$user_id' AND product_id ='$data'");
+        $result = $this->db->resultSet();
+        if (!$result) {
+            $this->db->query("INSERT INTO in_cart (user_id,product_id) VALUES(:user_id,:product_id)");
+            $this->db->bind(':user_id', $_SESSION['user_id']);
+            $this->db->bind(':product_id', $data);
+
+            if ($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
         }
+    }
+    public function findProductById($id)
+    {
+        $this->db->query("SELECT * FROM products WHERE id = '$id'");
+
+        $result = $this->db->single();
+
+        return $result;
+    }
+    public function show()
+    {
+        $user_id = $_SESSION['user_id'];
+        $this->db->query("SELECT * FROM in_cart WHERE user_id = '$user_id'");
+        $result = $this->db->resultSet();
+
+        $product_list = array();
+        foreach ($result as $product) {
+            $result = $this->findProductById($product->product_id);
+            array_push($product_list, $result);
+        }
+
+        return $product_list;
+    }
+    public function remove($product_id)
+    {
+        $user_id = $_SESSION['user_id'];
+        $this->db->query("DELETE FROM in_cart WHERE product_id ='$product_id' 
+                            AND user_id ='$user_id'");
+        $this->db->execute();
     }
 }

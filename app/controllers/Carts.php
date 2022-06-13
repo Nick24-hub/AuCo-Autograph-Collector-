@@ -11,6 +11,16 @@ class Carts extends Controller
     {
         $this->cartModel->add($data);
 
-        $this->view('index');
+        $this->show();
+    }
+    public function show()
+    {
+        $cart_data=$this->cartModel->show();
+        $this->view('/cart',$cart_data);
+    }
+    public function remove($product_id)
+    {
+        $this->cartModel->remove($product_id);
+        $this->show();
     }
 }?>
