@@ -43,6 +43,13 @@
                             <input type="password" name="password" placeholder="Password">
                             <button type="submit" name="login-submit" class="btn" value="submit">Login</button>
                             <a href="reset-password.php">Forgot password?</a>
+                            <p>
+                                <?php
+                                echo $data['usernameError'];
+                                echo $data['passwordError'];
+                                ?>
+                            </p>
+
                         </form>
 
                         <form id="RegForm" id="register-form" method="POST" action="<?php echo URLROOT; ?>/users/register">
@@ -52,7 +59,12 @@
                             <input type="password" name="confirmPassword" placeholder="Confirm Password">
                             <button type="submit" name="register-submit" class="btn">Register</button>
                             <p>
-                                <?php echo $data['passwordError']; ?>
+                                <?php 
+                                echo $data['usernameError'];
+                                // echo $data['emailError'];
+                                echo $data['passwordError'];
+                                //echo $data['confirmPasswordError'];
+                                ?>
                             <p>
                         </form>
 
