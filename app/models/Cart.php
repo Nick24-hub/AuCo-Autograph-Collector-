@@ -52,4 +52,24 @@ class Cart
                             AND user_id ='$user_id'");
         $this->db->execute();
     }
+    public function checkout()
+    {
+        $user_id = $_SESSION['user_id'];
+        $this->db->query("SELECT * FROM in_cart WHERE user_id = '$user_id'");
+        $products_bought = $this->db->resultSet();
+        
+        foreach ($products_bought as $product) {
+            $this->db->query("UPDATE products SET user_id='$user_id' WHERE id='$product->product_id'");
+            $this->db->execute();
+        }
+        $this->db->query("DELETE FROM in_cart WHERE user_id ='$user_id'");
+        $this->db->execute();
+    }
+    public function productsFromInventory()
+    {
+        $user_id = $_SESSION['user_id'];
+        $this->db->query("SELECT * FROM products WHERE user_id = '$user_id'");
+        $products_owned=$this->db->resultSet();
+        return $products_owned;
+    }
 }

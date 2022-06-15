@@ -23,4 +23,11 @@ class Carts extends Controller
         $this->cartModel->remove($product_id);
         $this->show();
     }
+    public function checkout()
+    {
+        $this->cartModel->checkout();
+        $results=$this->cartModel->productsFromInventory();
+        $data=['products'=>$results];
+        $this->view('/products/inventory',$data);
+    }
 }?>

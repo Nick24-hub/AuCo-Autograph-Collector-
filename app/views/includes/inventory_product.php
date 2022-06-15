@@ -43,4 +43,11 @@
         <?php } ?>
     </div>
     <p>$<?php echo $product->price; ?></p>
+    <form action="<?php echo URLROOT; ?>/products/deleteProduct/<?php echo $product->id ?>" method="DELETE">
+        <button style=background-color:orange type="submit">Delete Item</button>
+    </form>
+    <form action="<?php echo URLROOT; ?>" method="DELETE">
+        <button style=background-color:orange type="submit">Remove</button>
+    </form>
+
 </div>

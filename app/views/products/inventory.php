@@ -36,8 +36,7 @@
                     <a class="btn-filter" data-filter="Trap Star" href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id'] ?>/trap">Trap Star Autograph</a>
             </div>
         </div>
-
-
+        
         <?php $counter = 0;
         $row = 0;
         foreach ($data['products'] as $product) :
@@ -46,17 +45,17 @@
                 $row = 1; ?>
                 <div class="row">
                     <?php
-                    require APPROOT . '/views/includes/product.php';
+                    require APPROOT . '/views/includes/inventory_product.php';
                     ?>
                 <?php } else  if ($counter % 4 == 0) {
                 $row = 0; ?>
                     <?php
-                    require APPROOT . '/views/includes/product.php';
+                    require APPROOT . '/views/includes/inventory_product.php';
                     ?>
                 </div>
             <?php } else { ?>
                 <?php
-                require APPROOT . '/views/includes/product.php';
+                require APPROOT . '/views/includes/inventory_product.php';
                 ?>
         <?php }
         endforeach;

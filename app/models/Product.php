@@ -8,7 +8,7 @@ class Product
         $this->db = new Database;
     }
 
-    public function findMyProductsById($user_id, $filter)
+    public function findMyProductsByFilter($user_id, $filter)
     {
         $this->db->query("SELECT * FROM products WHERE user_id = '$user_id' and category LIKE '%$filter%'");
 
@@ -51,5 +51,11 @@ class Product
         $results = $this->db->resultSet();
 
         return $results;
+    }
+
+    public function deleteProduct($product_id)
+    {
+        $this->db->query("DELETE FROM products WHERE id='$product_id'");
+        $this->db->execute();
     }
 }

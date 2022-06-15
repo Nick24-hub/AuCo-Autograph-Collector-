@@ -64,6 +64,9 @@
         <div class="total-price">
 
         </div>
+        <form action="<?php echo URLROOT; ?>/carts/checkout" method="POST">
+            <button type="submit" class="btn">CHECKOUT</button>
+        </form>
     </div>
 
     <!-- footer -->

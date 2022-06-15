@@ -29,7 +29,7 @@
                     </h1>
                     <p>Anything you love more, fear more, serve more, or value more than God is your idol.</p>
                     <p>Here you can find your idol autograph.</p>
-                    <a href="gallery" class="btn">Explore Now &#8594;</a>
+                    <a href="<?php echo URLROOT; ?>/products/gallery/all" class="btn">Explore Now &#8594;</a>
                 </div>
                 <div class="col2">
                     <img alt="" src="<?php echo URLROOT ?>/public/img/background.png">
@@ -129,7 +129,7 @@
                     <h1>Leonardo DiCaprio Autograph Signature</h1>
                     <small>The autograph of the great actor Leonardo DiCaprio written on blue ink paper on July 20, 2021
                         at The thrd annual Saint-Tropez Gala by Leonardo DiCaprio Foundation </small>
-                    <a href="product-details-5.html" class="btn">Explore Now &#8594;</a>
+                    <a href="<?php echo URLROOT; ?>/products/product_details/5 ?>" class="btn">Explore Now &#8594;</a>
                 </div>
             </div>
         </div>

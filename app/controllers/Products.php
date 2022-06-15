@@ -35,9 +35,15 @@ class Products extends Controller
             $data = ['products' => $products];
             $this->view('products/inventory', $data);
         } else {
-            $products = $this->productModel->findMyProductsById($user_id, $filter);
+            $products = $this->productModel->findMyProductsByFilter($user_id, $filter);
             $data = ['products' => $products];
             $this->view('products/inventory', $data);
         }
+    }
+    public function deleteProduct($product_id)
+    {
+        $this->productModel->deleteProduct($product_id);
+        $this->inventory($_SESSION['user_id'],'all');
+
     }
 }
