@@ -42,13 +42,34 @@ class Products extends Controller
     }
     public function deleteProduct($product_id)
     {
-        $this->productModel->deleteProduct($product_id);
-        $this->inventory($_SESSION['user_id'], 'all');
+        if ($this->productModel->deleteProduct($product_id)) {
+
+            $this->inventory($_SESSION['user_id'], 'all');
+        } else {
+            die('Something went wrong.');
+        }
     }
-    public function editProduct($product_id)
+    public function editPage($product_id)
     {
         $product = $this->productModel->findProductById($product_id);
         $data = ['product' => $product];
         $this->view('products/edit_product', $data);
+    }
+    public function editProduct($product_id)
+    {
+        $data = [
+            'category' => trim($_POST['category']),
+            'title' => trim($_POST['title']),
+            'details' => trim($_POST['details']),
+            'price' => trim($_POST['price']),
+            'for_sale' => trim($_POST['for_sale']),
+        ];
+
+        //Edit product from model function
+        if ($this->productModel->edit($product_id, $data)) {
+            $this->inventory($_SESSION['user_id'], 'all');
+        } else {
+            die('Something went wrong.');
+        }
     }
 }

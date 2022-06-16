@@ -27,19 +27,22 @@
     <!-- contact form -->
     <div class="contact">
         <div class="contact-text">
-            <form class="contact-items">
+            <form class="contact-items" action="<?php echo URLROOT; ?>/products/editProduct/<?php echo $product->id ?>" method="POST">
                 <h2>Edit Item</h2>
                 <label for="title">Item title:</label>
                 <input type="text" name="title" value="<?php echo $product->title ?>">
                 <label for="category">Item category:</label>
                 <input type="text" name="category" value="<?php echo $product->category ?>">
-                <label for="details">Details:</label>
-                <input type="text" name="details" value="<?php echo $product->details ?>">
-                <label for="price">Price:</label>
-                <input type="number" name="price" value="<?php echo $product->price ?>">
-                <label for="forSale">For sale:</label>
-                <?php $for_sale = $product->for_sale; ?>
-                <input type="checkbox" name="forSale" id="forSale" <?php if ($for_sale) echo 'checked' ?> onclick=<?php $for_sale = !$for_sale; ?>>
+                <label for="details">Item Details:</label>
+                <textarea name="details" rows="4" cols="50"><?php echo $product->details ?></textarea>
+                <div class="special-items">
+                    <label for="price">Item Price:</label>
+                    <input type="number" step="0.01" name="price" value="<?php echo $product->price ?>">
+                    <label for="forSale">For sale:</label>
+                    <?php $for_sale = $product->for_sale; ?>
+                    <input type='hidden' value=0 name='for_sale'>
+                    <input type="checkbox" name="for_sale" value=1 <?php if ($for_sale) echo 'checked'; ?> onclick=<?php $for_sale = !$for_sale; ?>>
+                </div>
                 <button type="submit" name="contact-submit" class="btn">Submit</button>
             </form>
         </div>

@@ -1,17 +1,8 @@
 .contact-items {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .contact {
@@ -61,4 +52,20 @@
     padding: 15px 80px;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.contact-items label{
+    padding: 15px;
+    width: 50%;
+}
+
+.special-items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.special-items label{
+    padding: 15px;
+    width: 50%;
 }
