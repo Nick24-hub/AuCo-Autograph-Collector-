@@ -34,6 +34,7 @@
                     <a class="btn-filter" data-filter="Writer" href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id'] ?>/writer">Writer Autograph</a>
                     <a class="btn-filter" data-filter="Rap Star" href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id'] ?>/rap">Rap Star Autograph</a>
                     <a class="btn-filter" data-filter="Trap Star" href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id'] ?>/trap">Trap Star Autograph</a>
+                    <a class="btn-filter" data-filter="Actor" href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id'] ?>/actor">Actor Autograph</a>
             </div>
         </div>
         

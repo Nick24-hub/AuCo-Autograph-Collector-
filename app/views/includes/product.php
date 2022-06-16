@@ -42,5 +42,5 @@
             <span class="fa fa-star"></span>
         <?php } ?>
     </div>
-    <p>$<?php echo $product->price; ?></p>
+    <?php if ($product->for_sale)  echo "<p>$ {$product->price}</p>" ?>
 </div>

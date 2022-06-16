@@ -42,12 +42,12 @@
             <span class="fa fa-star"></span>
         <?php } ?>
     </div>
-    <p>$<?php echo $product->price; ?></p>
+    <?php if ($product->for_sale)  echo "<p>$ {$product->price}</p>" ?>
     <form action="<?php echo URLROOT; ?>/products/deleteProduct/<?php echo $product->id ?>" method="DELETE">
         <button style=background-color:orange type="submit">Delete Item</button>
     </form>
-    <form action="<?php echo URLROOT; ?>" method="DELETE">
-        <button style=background-color:orange type="submit">Remove</button>
+    <form action="<?php echo URLROOT; ?>/products/editProduct/<?php echo $product->id ?>" method="PATCH">
+        <button style=background-color:orange type="submit">Edit Item</button>
     </form>
 
 </div>

@@ -122,14 +122,13 @@
         <div class="small-container">
             <div class="row">
                 <div class="col2">
-                    <img alt="" src="<?php echo URLROOT ?>/public/img/offer1.png" class="offer-img">
+                    <img alt="" src="<?php echo URLROOT ?>/public/img/6_0.jpg" class="offer-img">
                 </div>
                 <div class="col2">
                     <p>Exclusively Available on AuCo (Autograph Collector)</p>
                     <h1>Leonardo DiCaprio Autograph Signature</h1>
-                    <small>The autograph of the great actor Leonardo DiCaprio written on blue ink paper on July 20, 2021
-                        at The thrd annual Saint-Tropez Gala by Leonardo DiCaprio Foundation </small>
-                    <a href="<?php echo URLROOT; ?>/products/product_details/5 ?>" class="btn">Explore Now &#8594;</a>
+                    <small>The autograph of the great actor Leonardo DiCaprio written on blue ink paper on July 20, 2021 at The third annual Saint-Tropez Gala by Leonardo DiCaprio Foundation </small>
+                    <a href="<?php echo URLROOT; ?>/products/product_details/6 ?>" class="btn">Explore Now &#8594;</a>
                 </div>
             </div>
         </div>

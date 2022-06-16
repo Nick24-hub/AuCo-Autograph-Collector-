@@ -52,10 +52,13 @@
                 <h1>
                     <?php echo $main_product->title; ?>
                 </h1>
-                <h4>$<?php echo $main_product->price; ?></h4>
-                <form action="<?php echo URLROOT; ?>/carts/add/<?php echo $main_product->id; ?>" method="POST">
-                    <button type="submit" class="btn">Buy</button>
-                </form>
+                <?php if ($main_product->for_sale) { ?>
+                    <h4>$<?php echo $main_product->price; ?></h4>
+                    <form action="<?php echo URLROOT; ?>/carts/add/<?php echo $main_product->id; ?>" method="POST">
+                        <button type="submit" class="btn">Buy</button>
+                    </form>
+                <?php
+                } ?>
                 <h3>Product Details</h3>
                 <br>
                 <p> <?php echo $main_product->details; ?>
@@ -68,7 +71,7 @@
     <div class="small-container">
         <div class="row row-2">
             <h2>Related Products</h2>
-            <a href="gallery.html">
+            <a href="<?php echo URLROOT; ?>/products/gallery/all">
                 <p>View More</p>
             </a>
         </div>

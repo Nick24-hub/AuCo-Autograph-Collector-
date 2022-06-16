@@ -43,7 +43,12 @@ class Products extends Controller
     public function deleteProduct($product_id)
     {
         $this->productModel->deleteProduct($product_id);
-        $this->inventory($_SESSION['user_id'],'all');
-
+        $this->inventory($_SESSION['user_id'], 'all');
+    }
+    public function editProduct($product_id)
+    {
+        $product = $this->productModel->findProductById($product_id);
+        $data = ['product' => $product];
+        $this->view('products/edit_product', $data);
     }
 }

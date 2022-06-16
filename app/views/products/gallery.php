@@ -34,6 +34,7 @@
                     <a class="btn-filter" data-filter="Writer" href="<?php echo URLROOT; ?>/products/gallery/writer">Writer Autograph</a>
                     <a class="btn-filter" data-filter="Rap Star" href="<?php echo URLROOT; ?>/products/gallery/rap">Rap Star Autograph</a>
                     <a class="btn-filter" data-filter="Trap Star" href="<?php echo URLROOT; ?>/products/gallery/trap">Trap Star Autograph</a>
+                    <a class="btn-filter" data-filter="Actor" href="<?php echo URLROOT; ?>/products/gallery/actor">Actor Autograph</a>
             </div>
         </div>
 
