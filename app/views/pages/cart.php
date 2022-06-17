@@ -39,7 +39,7 @@
                 <tr>
                     <td>
                         <div class="cart-info">
-                            <a href="product-details-1.php">
+                            <a href="<?php echo URLROOT; ?>/products/product_details/<?php echo $product->id; ?>">
                                 <img src="<?php echo URLROOT; ?>/img/<?php echo $product->id; ?>_0.jpg">
                             </a>
                             <div>

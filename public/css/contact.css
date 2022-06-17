@@ -69,3 +69,11 @@
     padding: 15px;
     width: 50%;
 }
+
+#display_image{
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+}
