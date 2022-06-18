@@ -54,7 +54,7 @@
     text-transform: uppercase;
 }
 
-.contact-items label{
+.contact-items label {
     padding: 15px;
     width: 50%;
 }
@@ -65,14 +65,42 @@
     align-items: center;
 }
 
-.special-items label{
+.special-items label {
     padding: 15px;
     width: 50%;
 }
 
-#display_image{
-    width: 80px;
-    height: 80px;
+
+
+
+#display_image1 {
+    width: 82px;
+    height: 102px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 5px;
+}
+
+#display_image2 {
+    width: 82px;
+    height: 102px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+}
+
+#display_image3 {
+    width: 82px;
+    height: 102px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+}
+
+#display_image4 {
+    width: 82px;
+    height: 102px;
     border: 1px solid black;
     background-position: center;
     background-size: cover;

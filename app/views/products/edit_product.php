@@ -44,17 +44,25 @@
                     <input type="checkbox" name="for_sale" value=1 <?php if ($for_sale) echo 'checked'; ?> onclick=<?php $for_sale = !$for_sale; ?>>
                 </div>
                 <label for="img">Item images:</label>
-                <!-- <a href="<?php echo URLROOT; ?>/products/product_details/<?php echo $product->id; ?>">
-                    <img style="width: 80px; margin-right: 10px;" src="<?php echo URLROOT; ?>/img/<?php echo $product->id; ?>_0.jpg">
-                </a> -->
-                <input type="file" id="image_input" name="img" accept="image/jpg">
-                <div id="display_image"></div>
-                <input type="file" id="image_input" name="img" accept="image/jpg">
-                <div id="display_image"></div>
-                <input type="file" id="image_input" name="img" accept="image/jpg">
-                <div id="display_image"></div>
-                <input type="file" id="image_input" name="img" accept="image/jpg">
-                <div id="display_image"></div>
+
+                <!-- <img style="width: 80px; margin-right: 10px;" src="<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_0.jpg"> -->
+
+                <input type="file" id="image_input1" name="img" accept="image/jpg" value="<?php echo $product->img; ?>_0.jpg">
+                <div id="display_image1">
+                    <img style="width: 80px; height: 100px; margin-right: 10px;" src="<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_0.jpg">
+                </div>
+                <input type="file" id="image_input2" accept="image/jpg" value="<?php echo $product->img; ?>_1.jpg">
+                <div id="display_image2">
+                    <img style="width: 80px; height: 100px; margin-right: 10px;" src="<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_1.jpg">
+                </div>
+                <input type="file" id="image_input3" accept="image/jpg" value="<?php echo $product->img; ?>_2.jpg">
+                <div id="display_image3">
+                    <img style="width: 80px; height: 100px; margin-right: 10px;" src="<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_2.jpg">
+                </div>
+                <input type="file" id="image_input4" accept="image/jpg" value="<?php echo $product->img; ?>_3.jpg">
+                <div id="display_image4">
+                    <img style="width: 80px; height: 100px; margin-right: 10px;" src="<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_3.jpg">
+                </div>
                 <button type="submit" name="contact-submit" class="btn">Submit</button>
             </form>
         </div>
@@ -71,7 +79,7 @@
     <script src="<?php echo URLROOT; ?>/javascript/toggle_menu.js"></script>
 
     <!-- js for img -->
-    <script src="<?php echo URLROOT; ?>/javascript/img.js"></script>
+    <script src="<?php echo URLROOT; ?>/javascript/edit_img.js"></script>
 
 </body>
 

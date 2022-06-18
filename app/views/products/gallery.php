@@ -30,10 +30,9 @@
             <h2>All Products</h2>
             <div class="filter-box">
                 <a class="current btn-filter" data-filter="all" href="<?php echo URLROOT; ?>/products/gallery/all">All</button>
-                    <a class="btn-filter" data-filter="Pop Star" href="<?php echo URLROOT; ?>/products/gallery/pop">Pop Star Autograph</a>
+                    <a class="btn-filter" data-filter="Pop Star" href="<?php echo URLROOT; ?>/products/gallery/music">Music Stars Autograph</a>
+                    <a class="btn-filter" data-filter="Pop Star" href="<?php echo URLROOT; ?>/products/gallery/sport">Sports Stars Autograph</a>
                     <a class="btn-filter" data-filter="Writer" href="<?php echo URLROOT; ?>/products/gallery/writer">Writer Autograph</a>
-                    <a class="btn-filter" data-filter="Rap Star" href="<?php echo URLROOT; ?>/products/gallery/rap">Rap Star Autograph</a>
-                    <a class="btn-filter" data-filter="Trap Star" href="<?php echo URLROOT; ?>/products/gallery/trap">Trap Star Autograph</a>
                     <a class="btn-filter" data-filter="Actor" href="<?php echo URLROOT; ?>/products/gallery/actor">Actor Autograph</a>
             </div>
         </div>

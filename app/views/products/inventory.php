@@ -30,14 +30,13 @@
             <h2>My Products</h2>
             <div class="filter-box">
                 <a class="current btn-filter" data-filter="all" href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id'] ?>/all">All</button>
-                    <a class="btn-filter" data-filter="Pop Star" href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id'] ?>/pop">Pop Star Autograph</a>
+                    <a class="btn-filter" data-filter="Pop Star" href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id'] ?>/music">Music Star Autograph</a>
+                    <a class="btn-filter" data-filter="Pop Star" href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id'] ?>/sport">Sports Star Autograph</a>
                     <a class="btn-filter" data-filter="Writer" href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id'] ?>/writer">Writer Autograph</a>
-                    <a class="btn-filter" data-filter="Rap Star" href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id'] ?>/rap">Rap Star Autograph</a>
-                    <a class="btn-filter" data-filter="Trap Star" href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id'] ?>/trap">Trap Star Autograph</a>
                     <a class="btn-filter" data-filter="Actor" href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id'] ?>/actor">Actor Autograph</a>
             </div>
         </div>
-        
+
         <?php $counter = 0;
         $row = 0;
         foreach ($data['products'] as $product) :

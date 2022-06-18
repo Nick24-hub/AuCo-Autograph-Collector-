@@ -63,11 +63,42 @@ class Products extends Controller
             'details' => trim($_POST['details']),
             'price' => trim($_POST['price']),
             'for_sale' => trim($_POST['for_sale']),
+            'img' => trim($_POST['img']),
         ];
 
+        foreach($data as $elem){
+            echo $elem;
+            echo '<br>';
+        }
+
         //Edit product from model function
-        if ($this->productModel->edit($product_id, $data)) {
-            $this->inventory($_SESSION['user_id'], 'all');
+        // if ($this->productModel->edit($product_id, $data)) {
+        //     $this->inventory($_SESSION['user_id'], 'all');
+        // } else {
+        //     die('Something went wrong.');
+        // }
+    }
+
+    public function add_product()
+    {
+        $this->view('products/add_product');
+    }
+
+    public function addProduct($user_id)
+    {
+        $data = [
+            'title' => trim($_POST['title']),
+            'category' => trim($_POST['category']),
+            'details' => trim($_POST['details']),
+            'price' => trim($_POST['price']),
+            'for_sale' => trim($_POST['for_sale']),
+            'img' => trim($_POST['img']),
+            'user_id' => $user_id
+        ];
+
+        //Add product from model function
+        if ($this->productModel->add_product($data)) {
+            $this->gallery('all');
         } else {
             die('Something went wrong.');
         }

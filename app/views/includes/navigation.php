@@ -11,6 +11,7 @@
         <?php if (isset($_SESSION['user_id'])) :
             if ($_SESSION['user_id'] != 5) : ?>
                 <li><a href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id']; ?>/all">My inventory</a></li>
+                <li><a href="<?php echo URLROOT; ?>/products/add_product">Add item</a></li>
                 <li><a href="<?php echo URLROOT; ?>/users/logout">Log Out</a></li>
             <?php else : ?>
                 <li><a href="<?php echo URLROOT; ?>/users/manage">Manage Accounts</a></li>
