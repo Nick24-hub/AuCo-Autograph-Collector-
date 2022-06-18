@@ -162,4 +162,32 @@ class Users extends Controller
         unset($_SESSION['email']);
         header('location:' . URLROOT . '/users/login');
     }
+    // Manage accounts
+    public function manage()
+    {
+       $results=$this->userModel->manage();
+       $this->view('users/manage',$results);
+
+    }
+    public function remove($id)
+    {
+        $this->userModel->remove($id);
+        $this->manage();
+    }
+    public function edit_account($data){
+        $data=$this->userModel->account_info($data);
+        $this->view('users/edit_account',$data);
+    }
+    public function edit_user($id)
+    {
+        $data=[
+            'username'=>trim($_POST['username']),
+        ];
+        if ($this->userModel->edit_user($data,$id)) {
+            $this->manage();
+        } else {
+            die('Something went wrong.');
+        }
+
+    }
 }

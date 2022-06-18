@@ -100,3 +100,13 @@ th:last-child {
     text-decoration: none;
     text-transform: uppercase;
 }
+/* total price display */
+.total-price{
+    display:flex;
+    justify-content: flex-end;
+}
+.total-price table{
+    border-top: 3px solid #ff523b;
+    width: 100%;
+    max-width: 350px;
+}

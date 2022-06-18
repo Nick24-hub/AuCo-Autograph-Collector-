@@ -52,13 +52,14 @@
                 <h1>
                     <?php echo $main_product->title; ?>
                 </h1>
-                <?php if ($main_product->for_sale && $main_product->user_id != $_SESSION['user_id']) { ?>
+                <?php if(isset($_SESSION['user_id'])):
+                    if ($main_product->for_sale && $main_product->user_id != $_SESSION['user_id']) { ?>
                     <h4>$<?php echo $main_product->price; ?></h4>
                     <form action="<?php echo URLROOT; ?>/carts/add/<?php echo $main_product->id; ?>" method="POST">
                         <button type="submit" class="btn">Buy</button>
                     </form>
                 <?php
-                } else echo "<h3>Not available for buying</h3><br>" ?>
+                } else echo "<h3>Not available for buying</h3><br>";endif; ?>
                 <h3>Product Details</h3>
                 <br>
                 <p> <?php echo $main_product->details; ?>

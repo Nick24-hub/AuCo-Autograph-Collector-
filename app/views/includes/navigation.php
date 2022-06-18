@@ -8,19 +8,25 @@
         <li><a href="<?php echo URLROOT; ?>/pages/index">Home</a></li>
         <li><a href="<?php echo URLROOT; ?>/products/gallery/all">Gallery</a></li>
         <li><a href="<?php echo URLROOT; ?>/pages/contact">Contact</a></li>
-        <?php if (isset($_SESSION['user_id'])) : ?>
-            <li><a href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id'] ?>/all">My inventory</a></li>
-            <li><a href="<?php echo URLROOT; ?>/users/logout">Log Out</a></li>
-
-        <?php else : ?>
+        <?php if (isset($_SESSION['user_id'])) :
+            if ($_SESSION['user_id'] != 5) : ?>
+                <li><a href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id']; ?>/all">My inventory</a></li>
+                <li><a href="<?php echo URLROOT; ?>/users/logout">Log Out</a></li>
+            <?php else : ?>
+                <li><a href="<?php echo URLROOT; ?>/users/manage">Manage Accounts</a></li>
+                <li><a href="<?php echo URLROOT; ?>/users/logout">Log Out</a></li>
+            <?php endif;
+        else : ?>
             <a href="<?php echo URLROOT; ?>/users/login">Log In</a></li>
         <?php endif; ?>
     </ul>
 </nav>
-<?php if (isset($_SESSION['user_id'])){?>
-    <a href="<?php echo URLROOT;?>/carts/show">
-        <img src="<?php echo URLROOT ?>/public/img/shopping-cart.png" width="30px" height="30px">
-        <!-- <span>0</span> -->
-    </a>
-    <?php } ?>
+<?php if (isset($_SESSION['user_id'])) {
+    if ($_SESSION['user_id'] != 5) { ?>
+        <a href="<?php echo URLROOT; ?>/carts/show">
+            <img src="<?php echo URLROOT ?>/public/img/shopping-cart.png" width="30px" height="30px">
+            <!-- <span>0</span> -->
+        </a>
+<?php }
+} ?>
 <img alt="" src="<?php echo URLROOT ?>/public/img/menu-icon.png" class="menu-icon" onclick="menutoggle()">
