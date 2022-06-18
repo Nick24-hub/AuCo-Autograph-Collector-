@@ -70,7 +70,7 @@ class Product
         $this->db->bind(':category', $data['category']);
         $this->db->bind(':details', $data['details']);
         $this->db->bind(':price', $data['price']);
-        $this->db->bind(':img', $data['img'][0]);
+        $this->db->bind(':img', $data['img']);
         $this->db->bind(':for_sale', $data['for_sale']);
         if ($this->db->execute()) {
             return true;
@@ -87,7 +87,7 @@ class Product
         $this->db->bind(':details', $data['details']);
         $this->db->bind(':price', $data['price']);
         $this->db->bind(':for_sale', $data['for_sale']);
-        $this->db->bind(':img', $data['img'][0]);
+        $this->db->bind(':img', $data['img']);
         $this->db->bind(':user_id', $data['user_id']);
 
 

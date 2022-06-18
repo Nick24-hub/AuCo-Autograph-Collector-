@@ -57,26 +57,33 @@ class Products extends Controller
     }
     public function editProduct($product_id)
     {
-        $data = [
-            'category' => trim($_POST['category']),
-            'title' => trim($_POST['title']),
-            'details' => trim($_POST['details']),
-            'price' => trim($_POST['price']),
-            'for_sale' => trim($_POST['for_sale']),
-            'img' => trim($_POST['img']),
-        ];
-
-        foreach($data as $elem){
-            echo $elem;
-            echo '<br>';
+        $product = $this->productModel->findProductById($product_id);
+        if ($_POST['img'] > 0) {
+            $data = [
+                'category' => trim($_POST['category']),
+                'title' => trim($_POST['title']),
+                'details' => trim($_POST['details']),
+                'price' => trim($_POST['price']),
+                'for_sale' => trim($_POST['for_sale']),
+                'img' => trim($_POST['img'][0]),
+            ];
+        } else {
+            $data = [
+                'category' => trim($_POST['category']),
+                'title' => trim($_POST['title']),
+                'details' => trim($_POST['details']),
+                'price' => trim($_POST['price']),
+                'for_sale' => trim($_POST['for_sale']),
+                'img' => $product->img,
+            ];
         }
 
         //Edit product from model function
-        // if ($this->productModel->edit($product_id, $data)) {
-        //     $this->inventory($_SESSION['user_id'], 'all');
-        // } else {
-        //     die('Something went wrong.');
-        // }
+        if ($this->productModel->edit($product_id, $data)) {
+            $this->inventory($_SESSION['user_id'], 'all');
+        } else {
+            die('Something went wrong.');
+        }
     }
 
     public function add_product()
@@ -92,7 +99,7 @@ class Products extends Controller
             'details' => trim($_POST['details']),
             'price' => trim($_POST['price']),
             'for_sale' => trim($_POST['for_sale']),
-            'img' => trim($_POST['img']),
+            'img' => trim($_POST['img'][0]),
             'user_id' => $user_id
         ];
 
