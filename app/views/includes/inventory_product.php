@@ -43,10 +43,10 @@
         <?php } ?>
     </div>
     <?php if ($product->for_sale)  echo "<p>$ {$product->price}</p>" ?>
-    <a href="<?php echo URLROOT; ?>/products/deleteProduct/<?php echo $product->id ?>">
-        <button style=background-color:orange type="submit">Delete Item</button>
-    </a>
     <a href="<?php echo URLROOT; ?>/products/editPage/<?php echo $product->id ?>">
         <button style=background-color:orange type="submit">Edit Item</button>
+    </a>
+    <a href="<?php echo URLROOT; ?>/products/deleteProduct/<?php echo $product->id ?>">
+        <button style=background-color:red type="submit">Delete Item</button>
     </a>
 </div>

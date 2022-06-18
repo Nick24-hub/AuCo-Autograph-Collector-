@@ -65,9 +65,9 @@
         } ?>
         <div class="row">
             <div class="page-btn">
-                <a href="gallery.html"><span>1</span></a>
-                <a href=""><span>2</span></a>
-                <a href=""><span>3</span></a>
+                <a href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id']; ?>/all"><span>1</span></a>
+                <a href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id']; ?>/all"><span>2</span></a>
+                <a href="<?php echo URLROOT; ?>/products/inventory/<?php echo $_SESSION['user_id']; ?>/all"><span>3</span></a>
                 <a href=""><span>&#8594;</span></a>
             </div>
         </div>
