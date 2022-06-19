@@ -45,23 +45,22 @@
                 </div>
                 <label for="img">Item images:</label>
 
-                <!-- <img style="width: 80px; margin-right: 10px;" src="<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_0.jpg"> -->
 
                 <input type="file" id="image_input1" name="img" accept="image/jpg" value="<?php echo $product->img; ?>_0.jpg">
                 <div id="display_image1">
-                    <img style="width: 80px; height: 100px; margin-right: 10px;" src="<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_0.jpg">
+                    <img style="width: 80px; height: 100px; margin-right: 10px;">
                 </div>
                 <input type="file" id="image_input2" accept="image/jpg" value="<?php echo $product->img; ?>_1.jpg">
                 <div id="display_image2">
-                    <img style="width: 80px; height: 100px; margin-right: 10px;" src="<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_1.jpg">
+                    <img style="width: 80px; height: 100px; margin-right: 10px;">
                 </div>
                 <input type="file" id="image_input3" accept="image/jpg" value="<?php echo $product->img; ?>_2.jpg">
                 <div id="display_image3">
-                    <img style="width: 80px; height: 100px; margin-right: 10px;" src="<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_2.jpg">
+                    <img style="width: 80px; height: 100px; margin-right: 10px;">
                 </div>
                 <input type="file" id="image_input4" accept="image/jpg" value="<?php echo $product->img; ?>_3.jpg">
                 <div id="display_image4">
-                    <img style="width: 80px; height: 100px; margin-right: 10px;" src="<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_3.jpg">
+                    <img style="width: 80px; height: 100px; margin-right: 10px;">
                 </div>
                 <button type="submit" name="contact-submit" class="btn">Submit</button>
             </form>
@@ -79,7 +78,63 @@
     <script src="<?php echo URLROOT; ?>/javascript/toggle_menu.js"></script>
 
     <!-- js for img -->
-    <script src="<?php echo URLROOT; ?>/javascript/edit_img.js"></script>
+    <script>
+        const image_input1 = document.querySelector("#image_input1");
+        const display_image1 = document.querySelector("#display_image1");
+        display_image1.style.backgroundImage = `url(<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_0.jpg)`
+        var uploaded_image1 = "";
+
+        image_input1.addEventListener("change", function() {
+            const reader = new FileReader();
+            reader.addEventListener("load", () => {
+                uploaded_image1 = reader.result;
+                display_image1.style.backgroundImage = `url(${uploaded_image1})`;
+            });
+            reader.readAsDataURL(this.files[0]);
+        })
+
+        const image_input2 = document.querySelector("#image_input2");
+        const display_image2 = document.querySelector("#display_image2");
+        display_image2.style.backgroundImage = `url(<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_1.jpg)`
+        var uploaded_image2 = "";
+
+        image_input2.addEventListener("change", function() {
+            const reader = new FileReader();
+            reader.addEventListener("load", () => {
+                uploaded_image2 = reader.result;
+                display_image2.style.backgroundImage = `url(${uploaded_image2})`;
+            });
+            reader.readAsDataURL(this.files[0]);
+        })
+
+        const image_input3 = document.querySelector("#image_input3");
+        const display_image3 = document.querySelector("#display_image3");
+        display_image3.style.backgroundImage = `url(<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_2.jpg)`
+        var uploaded_image3 = "";
+
+        image_input3.addEventListener("change", function() {
+            const reader = new FileReader();
+            reader.addEventListener("load", () => {
+                uploaded_image3 = reader.result;
+                display_image3.style.backgroundImage = `url(${uploaded_image3})`;
+            });
+            reader.readAsDataURL(this.files[0]);
+        })
+
+        const image_input4 = document.querySelector("#image_input4");
+        const display_image4 = document.querySelector("#display_image4");
+        display_image4.style.backgroundImage = `url(<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_3.jpg)`
+        var uploaded_image4 = "";
+
+        image_input4.addEventListener("change", function() {
+            const reader = new FileReader();
+            reader.addEventListener("load", () => {
+                uploaded_image4 = reader.result;
+                display_image4.style.backgroundImage = `url(${uploaded_image4})`;
+            });
+            reader.readAsDataURL(this.files[0]);
+        })
+    </script>
 
 </body>
 
