@@ -45,13 +45,13 @@
                 <label for="img">Item images:</label>
 
 
-                <input type="file" id="image_input1" name="img" accept="image/jpg">
+                <input type="file" id="image_input1" name="img_0" accept="image/jpg">
                 <div id="display_image1"></div>
-                <input type="file" id="image_input2" accept="image/jpg">
+                <input type="file" id="image_input2" name="img_1" accept="image/jpg">
                 <div id="display_image2"></div>
-                <input type="file" id="image_input3" accept="image/jpg">
+                <input type="file" id="image_input3" name="img_2" accept="image/jpg">
                 <div id="display_image3"></div>
-                <input type="file" id="image_input4" accept="image/jpg">
+                <input type="file" id="image_input4" name="img_3" accept="image/jpg">
                 <div id="display_image4"></div>
                 <button type="submit" name="contact-submit" class="btn">Submit</button>
             </form>

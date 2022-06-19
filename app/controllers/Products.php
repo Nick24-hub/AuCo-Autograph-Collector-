@@ -58,24 +58,29 @@ class Products extends Controller
     public function editProduct($product_id)
     {
         $product = $this->productModel->findProductById($product_id);
-        if ($_POST['img'] > 0) {
-            $data = [
-                'category' => trim($_POST['category']),
-                'title' => trim($_POST['title']),
-                'details' => trim($_POST['details']),
-                'price' => trim($_POST['price']),
-                'for_sale' => trim($_POST['for_sale']),
-                'img' => trim($_POST['img'][0]),
-            ];
-        } else {
-            $data = [
-                'category' => trim($_POST['category']),
-                'title' => trim($_POST['title']),
-                'details' => trim($_POST['details']),
-                'price' => trim($_POST['price']),
-                'for_sale' => trim($_POST['for_sale']),
-                'img' => $product->img,
-            ];
+        $data = [
+            'category' => trim($_POST['category']),
+            'title' => trim($_POST['title']),
+            'details' => trim($_POST['details']),
+            'price' => trim($_POST['price']),
+            'for_sale' => trim($_POST['for_sale']),
+            'img_0' => $product->img_0,
+            'img_1' => $product->img_1,
+            'img_2' => $product->img_2,
+            'img_3' => $product->img_3,
+        ];
+
+        if ($_POST['img_0']) {
+            $data['img_0'] = trim($_POST['img_0']);
+        }
+        if ($_POST['img_1']) {
+            $data['img_1'] = trim($_POST['img_1']);
+        }
+        if ($_POST['img_2']) {
+            $data['img_2'] = trim($_POST['img_2']);
+        }
+        if ($_POST['img_3']) {
+            $data['img_3'] = trim($_POST['img_3']);
         }
 
         //Edit product from model function
@@ -99,7 +104,10 @@ class Products extends Controller
             'details' => trim($_POST['details']),
             'price' => trim($_POST['price']),
             'for_sale' => trim($_POST['for_sale']),
-            'img' => trim($_POST['img'][0]),
+            'img_0' => trim($_POST['img_0']),
+            'img_1' => trim($_POST['img_1']),
+            'img_2' => trim($_POST['img_2']),
+            'img_3' => trim($_POST['img_3']),
             'user_id' => $user_id
         ];
 

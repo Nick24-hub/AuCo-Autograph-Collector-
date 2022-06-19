@@ -1,6 +1,6 @@
 <div class="col4">
     <a href="<?php echo URLROOT; ?>/products/product_details/<?php echo $product->id; ?>">
-        <img alt="" src="<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_0.jpg">
+        <img alt="" src="<?php echo URLROOT; ?>/img/<?php echo $product->img_0; ?>">
     </a>
     <h4><?php echo $product->title; ?></h4>
     <div class="rating">

@@ -46,19 +46,19 @@
                 <label for="img">Item images:</label>
 
 
-                <input type="file" id="image_input1" name="img" accept="image/jpg" value="<?php echo $product->img; ?>_0.jpg">
+                <input type="file" id="image_input1" name="img_0" accept="image/jpg" value="<?php echo $product->img_0; ?>">
                 <div id="display_image1">
                     <img style="width: 80px; height: 100px; margin-right: 10px;">
                 </div>
-                <input type="file" id="image_input2" accept="image/jpg" value="<?php echo $product->img; ?>_1.jpg">
+                <input type="file" id="image_input2" name="img_1" accept="image/jpg" value="<?php echo $product->img_1; ?>">
                 <div id="display_image2">
                     <img style="width: 80px; height: 100px; margin-right: 10px;">
                 </div>
-                <input type="file" id="image_input3" accept="image/jpg" value="<?php echo $product->img; ?>_2.jpg">
+                <input type="file" id="image_input3" name="img_2" accept="image/jpg" value="<?php echo $product->img_2; ?>">
                 <div id="display_image3">
                     <img style="width: 80px; height: 100px; margin-right: 10px;">
                 </div>
-                <input type="file" id="image_input4" accept="image/jpg" value="<?php echo $product->img; ?>_3.jpg">
+                <input type="file" id="image_input4" name="img_3" accept="image/jpg" value="<?php echo $product->img_3; ?>">
                 <div id="display_image4">
                     <img style="width: 80px; height: 100px; margin-right: 10px;">
                 </div>
@@ -81,7 +81,7 @@
     <script>
         const image_input1 = document.querySelector("#image_input1");
         const display_image1 = document.querySelector("#display_image1");
-        display_image1.style.backgroundImage = `url(<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_0.jpg)`
+        display_image1.style.backgroundImage = `url(<?php echo URLROOT; ?>/img/<?php echo $product->img_0; ?>)`
         var uploaded_image1 = "";
 
         image_input1.addEventListener("change", function() {
@@ -95,7 +95,7 @@
 
         const image_input2 = document.querySelector("#image_input2");
         const display_image2 = document.querySelector("#display_image2");
-        display_image2.style.backgroundImage = `url(<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_1.jpg)`
+        display_image2.style.backgroundImage = `url(<?php echo URLROOT; ?>/img/<?php echo $product->img_1; ?>)`
         var uploaded_image2 = "";
 
         image_input2.addEventListener("change", function() {
@@ -109,7 +109,7 @@
 
         const image_input3 = document.querySelector("#image_input3");
         const display_image3 = document.querySelector("#display_image3");
-        display_image3.style.backgroundImage = `url(<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_2.jpg)`
+        display_image3.style.backgroundImage = `url(<?php echo URLROOT; ?>/img/<?php echo $product->img_2; ?>)`
         var uploaded_image3 = "";
 
         image_input3.addEventListener("change", function() {
@@ -123,7 +123,7 @@
 
         const image_input4 = document.querySelector("#image_input4");
         const display_image4 = document.querySelector("#display_image4");
-        display_image4.style.backgroundImage = `url(<?php echo URLROOT; ?>/img/<?php echo $product->img; ?>_3.jpg)`
+        display_image4.style.backgroundImage = `url(<?php echo URLROOT; ?>/img/<?php echo $product->img_3; ?>)`
         var uploaded_image4 = "";
 
         image_input4.addEventListener("change", function() {

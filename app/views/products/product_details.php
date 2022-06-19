@@ -30,20 +30,20 @@
     <div class="small-container single-product">
         <div class="row">
             <div class="col2">
-                <img alt="" src="<?php echo URLROOT; ?>/img/<?php echo $main_product->img; ?>_0.jpg" id="ProductImg">
+                <img alt="" src="<?php echo URLROOT; ?>/img/<?php echo $main_product->img_0; ?>" id="ProductImg">
 
                 <div class="small-img-row">
                     <div class="small-img-col">
-                        <img alt="" src="<?php echo URLROOT; ?>/img/<?php echo $main_product->img; ?>_0.jpg" class="small-img">
+                        <img alt="" src="<?php echo URLROOT; ?>/img/<?php echo $main_product->img_0; ?>" class="small-img">
                     </div>
                     <div class="small-img-col">
-                        <img alt="" src="<?php echo URLROOT; ?>/img/<?php echo $main_product->img; ?>_1.jpg" class="small-img">
+                        <img alt="" src="<?php echo URLROOT; ?>/img/<?php echo $main_product->img_1; ?>" class="small-img">
                     </div>
                     <div class="small-img-col">
-                        <img alt="" src="<?php echo URLROOT; ?>/img/<?php echo $main_product->img; ?>_2.jpg" class="small-img">
+                        <img alt="" src="<?php echo URLROOT; ?>/img/<?php echo $main_product->img_2; ?>" class="small-img">
                     </div>
                     <div class="small-img-col">
-                        <img alt="" src="<?php echo URLROOT; ?>/img/<?php echo $main_product->img; ?>_3.jpg" class="small-img">
+                        <img alt="" src="<?php echo URLROOT; ?>/img/<?php echo $main_product->img_3; ?>" class="small-img">
                     </div>
                 </div>
             </div>
