@@ -29,4 +29,9 @@ class Pages extends Controller
     {
         $this->view('cart');
     }
+
+    public function documentation()
+    {
+        $this->view('documentation');
+    }
 }

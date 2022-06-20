@@ -19,7 +19,7 @@
                     <li><a href="<?php echo URLROOT ?>/products/csv" download="products.csv">
                             Download products as CSV file</a></li>
                     <li><a href="<?php echo URLROOT ?>/products/rss">View products in RSS format</a></li>
-                    <li>Return Policy</li>
+                    <li><a href="<?php echo URLROOT ?>/pages/documentation">View documentation</a></li>
                     <li>Join Affiliate</li>
                 </ul>
             </div>
