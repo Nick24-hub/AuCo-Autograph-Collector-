@@ -16,7 +16,7 @@
             <div class="footer-col3">
                 <h3>Useful Links</h3>
                 <ul>
-                    <li><a href="<?php echo URLROOT ?>/csv/product.csv" download="product.csv">
+                    <li><a href="<?php echo URLROOT ?>/products/csv" download="products.csv">
                             Download products as CSV file</a></li>
                     <li><a href="">View Statistics</a></li>
                     <li>Return Policy</li>

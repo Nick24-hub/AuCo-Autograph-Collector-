@@ -7,6 +7,36 @@ class Products extends Controller
         $this->productModel = $this->model('Product');
     }
 
+    public function csv()
+    {
+        $data = [
+            ['cateogry', 'title', 'price', 'details', 'rating', 'id', 'owner_id', 'created_at', 'img_0', 'img_1', 'img_2', 'img_3', 'for_sale'],
+        ];
+        $products = $this->productModel->findAllProducts();
+
+        $filename = 'products.csv';
+
+        // open csv file for writing
+        $f = fopen($filename, 'w');
+
+        if ($f === false) {
+            die('Error opening the file ' . $filename);
+        }
+
+
+        foreach ($products as $product) {
+            array_push($data, (array)$product);
+        }
+
+        // write each row at a time to a file
+        foreach ($data as $row) {
+            fputcsv($f, $row);
+        }
+
+        // close the file
+        fclose($f);
+    }
+
     public function gallery($data)
     {
         if ($data == 'all') {
