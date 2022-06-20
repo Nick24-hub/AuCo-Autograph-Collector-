@@ -9,7 +9,7 @@ class User
 
     public function register($data)
     {
-        $this->db->query('INSERT INTO users (username, email, password) VALUES(:username, :email, :password)');
+        $this->db->query('INSERT INTO users (username, email, user_password) VALUES(:username, :email, :password)');
 
         //Bind values
         $this->db->bind(':username', $data['username']);
@@ -33,7 +33,7 @@ class User
 
         $row = $this->db->single();
         if ($row) {
-            $hashedPassword = $row->password;
+            $hashedPassword = $row->user_password;
 
             if (password_verify($password, $hashedPassword)) {
                 return $row;
@@ -81,10 +81,10 @@ class User
         $this->db->query("DELETE FROM products WHERE user_id='$id'");
         $this->db->execute();
     }
-    public function edit_user($data,$id)
-    {    
-        $username=$data['username'];
-        $this->db->query("UPDATE users SET username='$username' WHERE id=$id ");
+    public function edit_user($data, $id)
+    {
+        $username = $data['username'];
+        $this->db->query("UPDATE users SET username='$username' WHERE id='$id' ");
         if ($this->db->execute()) {
             return true;
         } else {
@@ -97,5 +97,20 @@ class User
         $this->db->query("SELECT * FROM users WHERE id='$id'");
         $results = $this->db->single();
         return $results;
+    }
+
+    public function edit_my_account($data, $id)
+    {
+        $username = $data['username'];
+        $email = $data['email'];
+        $password = $data['newPassword'];
+
+        $this->db->query("UPDATE users SET username='$username', email='$email', user_password='$password' WHERE id='$id' ");
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

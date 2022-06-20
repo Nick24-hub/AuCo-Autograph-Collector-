@@ -6,6 +6,110 @@ class Users extends Controller
         $this->userModel = $this->model('User');
     }
 
+    public function my_account($id)
+    {
+        $user = $this->userModel->account_info($id);
+        $data = [
+            'username' => $user->username,
+            'email' => $user->email,
+            'password' => $user->user_password,
+            'usernameError' => '',
+            'emailError' => '',
+            'passwordError' => '',
+            'confirmPasswordError' => '',
+            'currentPasswordError' => ''
+        ];
+        $this->view('users/my_account', $data);
+    }
+
+    public function edit_my_account($id)
+    {
+        $user = $this->userModel->account_info($id);
+        $data = [
+            'username' => $user->username,
+            'email' => $user->email,
+            'newPassword' => $user->user_password,
+            'confirmPassword' => '',
+            'usernameError' => '',
+            'emailError' => '',
+            'passwordError' => '',
+            'confirmPasswordError' => '',
+            'currentPasswordError' => ''
+        ];
+
+        if (trim($_POST['username'])) {
+            $data['username'] = trim($_POST['username']);
+            $nameValidation = "/^[a-zA-Z0-9]*$/";
+            //Validate username on letters/numbers
+            if (!preg_match($nameValidation, $data['username'])) {
+                $data['usernameError'] = 'Name can only contain letters and numbers.';
+            }
+        }
+
+        if (trim($_POST['email'])) {
+            $data['email'] = trim($_POST['email']);
+            $nameValidation = "/^[a-zA-Z0-9]*$/";
+            //Validate email
+            if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+                $data['emailError'] = 'Please enter the correct format.';
+            } else {
+                //Check if email exists.
+                if ($this->userModel->findUserByEmail($data['email'])) {
+                    $data['emailError'] = 'Email is already taken.';
+                }
+            }
+        }
+
+        if (trim($_POST['new_password'])) {
+            $data['newPassword'] = trim($_POST['new_password']);
+            $passwordValidation = "/^(.{0,7}|[^a-z]*|[^\d]*)$/i";
+            // Validate password on length, numeric values,
+            if (strlen($data['newPassword']) < 6) {
+                $data['passwordError'] = 'Password must be at least 8 characters';
+            } elseif (preg_match($passwordValidation, $data['newPassword'])) {
+                $data['passwordError'] = 'Password must be have at least one numeric value.';
+            }
+
+            $data['confirmPassword'] = trim($_POST['confirm_password']);
+            //Validate confirm password
+            if (empty($data['confirmPassword'])) {
+                $data['confirmPasswordError'] = 'Please enter password.';
+            } else {
+                if ($data['newPassword'] != $data['confirmPassword']) {
+                    $data['confirmPasswordError'] = 'Passwords do not match, please try again.';
+                }
+            }
+        }
+
+        if (trim($_POST['current_password'])) {
+            // Make sure that errors are empty
+            if (empty($data['usernameError']) && empty($data['emailError']) && empty($data['passwordError']) && empty($data['confirmPasswordError'])) {
+                $currentPassword = trim($_POST['current_password']);
+                if (password_verify($currentPassword, $user->user_password)) {
+                    // Hash newPassword
+                    $data['newPassword'] = password_hash($data['newPassword'], PASSWORD_DEFAULT);
+                    //Edit user data from model function
+                    if ($this->userModel->edit_my_account($data, $id)) {
+                        $user = $this->userModel->account_info($id);
+                        $data['username'] =  $user->username;
+                        $data['email'] =  $user->email;
+                        $this->view("users/my_account", $data);
+                    } else {
+                        die('Something went wrong.');
+                    }
+                } else {
+                    $data['currentPasswordError'] = 'Current password is wrong.';
+                }
+            }
+        } else {
+            $data['currentPasswordError'] = 'Please enter the current password.';
+        }
+        $user = $this->userModel->account_info($id);
+        $data['username'] =  $user->username;
+        $data['email'] =  $user->email;
+        $this->view("users/my_account", $data);
+    }
+
     public function register()
     {
         $data = [
@@ -165,29 +269,28 @@ class Users extends Controller
     // Manage accounts
     public function manage()
     {
-       $results=$this->userModel->manage();
-       $this->view('users/manage',$results);
-
+        $results = $this->userModel->manage();
+        $this->view('users/manage', $results);
     }
     public function remove($id)
     {
         $this->userModel->remove($id);
         $this->manage();
     }
-    public function edit_account($data){
-        $data=$this->userModel->account_info($data);
-        $this->view('users/edit_account',$data);
+    public function edit_account($data)
+    {
+        $data = $this->userModel->account_info($data);
+        $this->view('users/edit_account', $data);
     }
     public function edit_user($id)
     {
-        $data=[
-            'username'=>trim($_POST['username']),
+        $data = [
+            'username' => trim($_POST['username']),
         ];
-        if ($this->userModel->edit_user($data,$id)) {
+        if ($this->userModel->edit_user($data, $id)) {
             $this->manage();
         } else {
             die('Something went wrong.');
         }
-
     }
 }
