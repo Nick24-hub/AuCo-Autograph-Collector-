@@ -32,7 +32,15 @@
                 <label for="title">Item title:</label>
                 <input type="text" name="title" value="<?php echo $product->title ?>">
                 <label for="category">Item category:</label>
-                <input type="text" name="category" value="<?php echo $product->category ?>">
+                <!-- <input type="text" name="category" value="<?php echo $product->category ?>"> -->
+                <input type="text" list="category" name="category" value="<?php echo $product->category ?>" />
+                <datalist id="category">
+                    <option value="">Select category:</option>
+                    <option value="Music Star">Music Star</option>
+                    <option value="Writer">Writer</option>
+                    <option value="Sports Star">Sports Star</option>
+                    <option value="Actor">Actor</option>
+                </datalist>
                 <label for="details">Item Details:</label>
                 <textarea name="details" rows="4" cols="50"><?php echo $product->details ?></textarea>
                 <div class="special-items">

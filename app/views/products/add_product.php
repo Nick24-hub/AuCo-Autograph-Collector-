@@ -31,7 +31,14 @@
                 <label for="title">Item title:</label>
                 <input type="text" name="title" placeholder="Michael Jackson autograph">
                 <label for="category">Item category:</label>
-                <input type="text" name="category" placeholder="Pop Stars">
+                <input type="text" list="category" name="category" />
+                <datalist id="category">
+                    <option value="">Select category:</option>
+                    <option value="Music Star">Music Star</option>
+                    <option value="Writer">Writer</option>
+                    <option value="Sports Star">Sports Star</option>
+                    <option value="Actor">Actor</option>
+                </datalist>
                 <label for="details">Item Details:</label>
                 <textarea name="details" rows="4" cols="50" placeholder="Written on paper at 01.10.1992 concert from Bucharest"></textarea>
                 <div class="special-items">
