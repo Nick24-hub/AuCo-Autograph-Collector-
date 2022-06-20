@@ -7,6 +7,13 @@ class Products extends Controller
         $this->productModel = $this->model('Product');
     }
 
+    public function rss()
+    {
+        $products = $this->productModel->findAllProducts();
+        $data = ['products' => $products];
+        $this->view('products/rss', $data);
+    }
+
     public function csv()
     {
         $data = [
