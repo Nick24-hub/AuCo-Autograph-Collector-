@@ -33,7 +33,7 @@
                 <label for="category">Item category:</label>
                 <input type="text" name="category" placeholder="Pop Stars">
                 <label for="details">Item Details:</label>
-                <textarea name="details" rows="4" cols="50">Written on paper at 01.10.1992 concert from Bucharest</textarea>
+                <textarea name="details" rows="4" cols="50" placeholder="Written on paper at 01.10.1992 concert from Bucharest"></textarea>
                 <div class="special-items">
                     <label for="price">Item Price:</label>
                     <input type="number" step="0.01" name="price" placeholder="14999.99">
